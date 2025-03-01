@@ -1,4 +1,4 @@
-# MyToken ERC20 Project
+# MrFreemanToken ERC20 Project
 
 This project is a simple ERC20 token implementation using OpenZeppelin contracts. The token has minting and burning functions disabled. It includes a test suite and a deployment script using the Foundry toolchain.
 
@@ -34,21 +34,6 @@ This will execute the test suite located in the `test/` directory, which include
 
 ## Deployment
 
-### Ethereum Network
-
-1. Set up your environment variables for deployment. You need to provide your Ethereum node's RPC URL and your wallet's private key. You can do this by creating a `.env` file:
-
-   ```plaintext
-   ETH_RPC_URL=<your-ethereum-rpc-url>
-   PRIVATE_KEY=<your-private-key>
-   ```
-
-2. Deploy the contract using the following command:
-
-   ```bash
-   forge script script/DeployMyToken.s.sol --rpc-url $ETH_RPC_URL --private-key $PRIVATE_KEY --broadcast
-   ```
-
 ### Base Network
 
 To deploy on the Base network, you need to change the RPC URL to point to a Base network node. Follow the same steps as above, but replace the `ETH_RPC_URL` with your Base network RPC URL.
@@ -56,13 +41,13 @@ To deploy on the Base network, you need to change the RPC URL to point to a Base
 1. Update your `.env` file:
 
    ```plaintext
-   BASE_RPC_URL=<your-base-network-rpc-url>
+   ETH_RPC_URL=<your-base-network-rpc-url>
    ```
 
 2. Deploy the contract using the following command:
 
    ```bash
-   forge script script/DeployMyToken.s.sol --rpc-url $BASE_RPC_URL --private-key $PRIVATE_KEY --broadcast
+   forge script script/DeployMrFreemanToken.s.sol --rpc-url $ETH_RPC_URL --private-key $PRIVATE_KEY --broadcast
    ```
 
 ## Notes

@@ -3,18 +3,17 @@ pragma solidity ^0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 
-contract MyToken is ERC20 {
+contract MrFreemanToken is ERC20 {
+
     constructor(string memory name, string memory symbol, uint256 initialSupply) ERC20(name, symbol) {
-        _mint(msg.sender, initialSupply);
+        super._mint(msg.sender, initialSupply);
     }
 
-    // Override the mint function to disable it
-    function _mint(address account, uint256 amount) internal override {
+    function mint(address, uint256) public pure {
         revert("Minting is disabled");
     }
-
-    // Override the burn function to disable it
-    function _burn(address account, uint256 amount) internal override {
+    
+    function burn(address, uint256) public pure {
         revert("Burning is disabled");
     }
 } 

@@ -2,15 +2,19 @@
 pragma solidity ^0.8.0;
 
 import "forge-std/Test.sol";
-import "../src/MyToken.sol";
+import "../src/MrFreemanToken.sol";
 
-contract MyTokenTest is Test {
-    MyToken token;
+contract MrFreemanTokenTest is Test {
+    MrFreemanToken token;
     address user1 = address(0x1);
     address user2 = address(0x2);
 
     function setUp() public {
-        token = new MyToken("MyToken", "MTK", 1000 * 10 ** 18);
+        uint256 initialSupply = 100000000 * 10 ** 18;
+        string memory name = "Digital Mr. Freeman";
+        string memory symbol = "MF0";
+        
+        token = new MrFreemanToken(name, symbol, initialSupply);
     }
 
     function testTransfer() public {
